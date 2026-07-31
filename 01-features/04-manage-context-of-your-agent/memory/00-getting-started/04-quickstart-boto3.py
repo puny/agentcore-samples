@@ -5,7 +5,7 @@ from datetime import datetime, timezone
 
 import boto3
 
-REGION = os.getenv("AWS_REGION", "us-east-1")
+REGION = os.getenv("AWS_REGION", "ap-northeast-2")
 ACTOR_ID = "user-42"
 
 # Get or create a minimal IAM role for AgentCore Memory execution

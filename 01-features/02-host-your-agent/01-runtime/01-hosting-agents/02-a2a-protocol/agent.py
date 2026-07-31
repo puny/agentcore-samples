@@ -54,7 +54,8 @@ def summarize_text(text: str) -> str:
 
 # ── Agent Setup ──────────────────────────────────────────────────────────────
 
-model = BedrockModel(model_id="us.anthropic.claude-haiku-4-5-20251001-v1:0")
+# model = BedrockModel(model_id="us.anthropic.claude-haiku-4-5-20251001-v1:0")
+model = BedrockModel(model_id="global.anthropic.claude-haiku-4-5-20251001-v1:0")
 
 agent = Agent(
     model=model,
