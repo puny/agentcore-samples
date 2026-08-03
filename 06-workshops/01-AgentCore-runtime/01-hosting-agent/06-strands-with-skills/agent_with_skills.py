@@ -3,7 +3,6 @@ from strands_tools import calculator
 from strands.models import BedrockModel
 from bedrock_agentcore.runtime import BedrockAgentCoreApp
 
-
 @tool
 def weather() -> dict:
     """Get current weather information."""
@@ -12,9 +11,8 @@ def weather() -> dict:
         "temp_f": 75,
         "temp_c": 24,
         "humidity": 45,
-        "wind_mph": 10,
+        "wind_mph": 10
     }
-
 
 # Programmatic skill — defined inline, no SKILL.md file needed
 math_tutor = Skill(
@@ -38,12 +36,10 @@ agent = Agent(model=model, tools=[calculator, weather], plugins=[skills])
 
 app = BedrockAgentCoreApp()
 
-
 @app.entrypoint
 def invoke_agent(payload: dict) -> str:
     response = agent(payload.get("prompt", ""))
-    return response.message["content"][0]["text"]
-
+    return response.message['content'][0]['text']
 
 if __name__ == "__main__":
     app.run()
